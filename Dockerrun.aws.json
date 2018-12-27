@@ -20,7 +20,7 @@
             "name": "worker",
             "image": "ravi2krishna/multi-worker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
           "memory": 128
         },
            {
