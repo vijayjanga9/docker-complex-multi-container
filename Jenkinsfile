@@ -25,5 +25,11 @@ pipeline {
                 }
             }	
 
+	stage('Deploy AWS') {
+            agent any
+                steps {
+                    step([$class: 'AWSEBDeploymentBuilder', applicationName: 'multi-docker', awsRegion: 'us-east-1', bucketName: 'elasticbeanstalk-us-east-1-256225485494', checkHealth: true, credentialId: 'multi-docker-deployer', environmentName: 'MultiDocker-env', excludes: '', includes: '', keyPrefix: '', maxAttempts: 5, rootObject: '', sleepTime: 90, versionDescriptionFormat: 'mapp', versionLabelFormat: 'multi-app', zeroDowntime: false])    
+                }
+            } 
     }
 }
